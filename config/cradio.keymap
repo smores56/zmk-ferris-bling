@@ -46,10 +46,10 @@
 
         MAIN_layer {
             bindings = <
-                &kp Z       &kp C      &kp Y       &kp W      &kp K          &kp X         &kp L      &kp U       &kp CMMA   &kp Q 
-                &mt LSHFT R &mt LALT S &mt LCTRL I &mt LGUI T &kp G          &kp M         &mt RGUI N &mt RCTRL E &mt RALT A &mt RSHFT O
-                &kp J       &kp F      &kp P       &lt SYM D  &kp B          &kp V         &lt SYM H  &kp APOS    &kp DOT    &kp FSLH
-                                                   &lt FN TAB &lt NAV SPC    &mt RSHFT ENT &kp BKSP 
+                &kp Z       &kp C      &kp Y       &kp W      &kp K          &kp X           &kp L      &kp U       &kp CMMA   &kp Q 
+                &mt LSHFT R &mt LALT S &mt LCTRL I &mt LGUI T &kp G          &kp M           &mt RGUI N &mt RCTRL E &mt RALT A &mt RSHFT O
+                &kp J       &kp F      &kp P       &lt SYM D  &kp B          &kp V           &lt SYM H  &kp APOS    &kp DOT    &kp FSLH
+                                                   &lt FN TAB &lt NAV SPC    &mt RSHFT ENTER &kp BKSP 
             >;
         };
 
@@ -64,10 +64,10 @@
 
         NAV_layer {
             bindings = <
-                &none    &none     &none     &none     &none    &none &none      &none        &none        &none
-                &kp LEFT &kp DOWN  &kp UP    &kp RIGHT &none    &none &kp C_PREV &kp C_VOL_DN &kp C_VOL_UP &kp C_NEXT
-                &kp HOME &kp PG_DN &kp PG_UP &kp END   &none    &none &kp C_MPLY &kp C_MSTP   &kp C_MUTE   &none
-                                             &none     &none    &none &kp DEL 
+                &none    &none     &none     &none     &none    &none     &none      &none        &none        &none
+                &kp LEFT &kp DOWN  &kp UP    &kp RIGHT &none    &none     &kp C_PREV &kp C_VOL_DN &kp C_VOL_UP &kp C_NEXT
+                &kp HOME &kp PG_DN &kp PG_UP &kp END   &none    &none     &kp C_MPLY &kp C_MSTP   &kp C_MUTE   &none
+                                             &none     &none    &kp ENTER &kp DEL 
             >;
         };	
 
