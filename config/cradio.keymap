@@ -15,10 +15,33 @@
 
 &mt {
     flavor = "tap-preferred";
-    tapping_term_ms = <150>;
+    tapping_term_ms = <100>;
 };
 
-/ { 
+/ {
+    behaviors {
+        macro_email {
+            compatible = "zmk,behavior-macro";
+            label = "MACRO_EMAIL";
+            #binding-cells = <0>;
+            bindings = <&kp S>, <&kp A>, <&kp M>, <&kp AT>, <&kp M>, <&kp O>, <&kp H>, <&kp R>, <&kp DOT>, <&kp C>, <&kp O>, <&kp D>, <&kp E>, <&kp S>;
+        };
+
+        macro_write {
+            compatible = "zmk,behavior-macro";
+            label = "MACRO_WRITE";
+            #binding-cells = <0>;
+            bindings = <&kp COLON>, <&kp W>, <&kp ENTER>;
+        };
+
+        macro_wq {
+            compatible = "zmk,behavior-macro";
+            label = "MACRO_WRITE_QUIT";
+            #binding-cells = <0>;
+            bindings = <&kp COLON>, <&kp W>, <&kp Q>, <&kp ENTER>;
+        };
+    };
+
     combos {
         compatible = "zmk,combos";
 
@@ -26,6 +49,24 @@
             timeout-ms = <50>;
             key-positions = <21 22>;
             bindings = <&kp ESC>;
+        };
+
+        combo_tab {
+            timeout-ms = <50>;
+            key-positions = <3 13>;
+            bindings = <&kp TAB>;
+        };
+
+        combo_minus {
+            timeout-ms = <50>;
+            key-positions = <4 14>;
+            bindings = <&kp MINUS>;
+        };
+
+        combo_underscore {
+            timeout-ms = <50>;
+            key-positions = <14 24>;
+            bindings = <&kp UNDERSCORE>;
         };
 
         combo_colon {
@@ -46,10 +87,10 @@
 
         MAIN_layer {
             bindings = <
-                &kp Z       &kp C      &kp Y       &kp W      &kp K          &kp X           &kp L      &kp U       &kp CMMA   &kp Q 
-                &mt LSHFT R &mt LALT S &mt LCTRL I &mt LGUI T &kp G          &kp M           &mt RGUI N &mt RCTRL E &mt RALT A &mt RSHFT O
-                &kp J       &kp F      &kp P       &lt SYM D  &kp B          &kp V           &lt SYM H  &kp APOS    &kp DOT    &kp FSLH
-                                                   &lt FN TAB &lt NAV SPC    &mt RSHFT ENTER &kp BKSP 
+                &kp Z       &kp C      &kp Y       &kp W        &kp K          &kp X     &kp L      &kp U       &kp CMMA   &kp Q 
+                &mt LSHFT R &mt LALT S &mt LCTRL I &mt LGUI T   &kp G          &kp M     &mt RGUI N &mt RCTRL E &mt RALT A &mt RSHFT O
+                &kp J       &kp F      &kp P       &lt SYM D    &kp B          &kp V     &lt SYM H  &kp APOS    &kp DOT    &kp FSLH
+                                                   &lt FN ENTER &lt NAV SPC    &kp RSHFT &kp BKSP 
             >;
         };
 
@@ -64,10 +105,10 @@
 
         NAV_layer {
             bindings = <
-                &kp C_PREV &kp C_VOL_DN &kp C_VOL_UP &kp C_NEXT &kp C_MUTE    &none     &none   &none &none &none
-                &kp LEFT   &kp DOWN     &kp UP       &kp RIGHT  &kp C_PP      &none     &none   &none &none &none
-                &kp HOME   &kp PG_DN    &kp PG_UP    &kp END    &kp C_STOP    &none     &none   &none &none &none
-                                                     &none      &none         &kp ENTER &kp DEL
+                &kp C_PREV &kp C_VOL_DN &kp C_VOL_UP &kp C_NEXT &kp C_MUTE    &none  &none        &none     &none        &none
+                &kp LEFT   &kp DOWN     &kp UP       &kp RIGHT  &kp C_PP      &none  &macro_write &macro_wq &macro_email &none
+                &kp HOME   &kp PG_DN    &kp PG_UP    &kp END    &kp C_STOP    &none  &none        &none     &none        &none
+                                                     &none      &none         &trans &kp DEL
             >;
         };	
 
