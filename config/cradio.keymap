@@ -59,14 +59,8 @@
 
         combo_minus {
             timeout-ms = <50>;
-            key-positions = <4 14>;
+            key-positions = <6 16>;
             bindings = <&kp MINUS>;
-        };
-
-        combo_underscore {
-            timeout-ms = <50>;
-            key-positions = <14 24>;
-            bindings = <&kp UNDERSCORE>;
         };
 
         combo_colon {
