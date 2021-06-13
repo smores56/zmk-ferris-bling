@@ -19,28 +19,28 @@
 };
 
 / {
-    // behaviors {
-    //     macro_email: macro_email {
-    //         compatible = "zmk,behavior-macro";
-    //         label = "MACRO_EMAIL";
-    //         #binding-cells = <0>;
-    //         bindings = <&kp S>, <&kp A>, <&kp M>, <&kp AT>, <&kp M>, <&kp O>, <&kp H>, <&kp R>, <&kp DOT>, <&kp C>, <&kp O>, <&kp D>, <&kp E>, <&kp S>;
-    //     };
+    behaviors {
+        macro_email: macro_email {
+            compatible = "zmk,behavior-macro";
+            label = "MACRO_EMAIL";
+            #binding-cells = <0>;
+            bindings = <&kp S>, <&kp A>, <&kp M>, <&kp AT>, <&kp M>, <&kp O>, <&kp H>, <&kp R>, <&kp DOT>, <&kp C>, <&kp O>, <&kp D>, <&kp E>, <&kp S>;
+        };
 
-    //     macro_write: macro_write {
-    //         compatible = "zmk,behavior-macro";
-    //         label = "MACRO_WRITE";
-    //         #binding-cells = <0>;
-    //         bindings = <&kp COLON>, <&kp W>, <&kp ENTER>;
-    //     };
+        macro_write: macro_write {
+            compatible = "zmk,behavior-macro";
+            label = "MACRO_WRITE";
+            #binding-cells = <0>;
+            bindings = <&kp COLON>, <&kp W>, <&kp ENTER>;
+        };
 
-    //     macro_wq: macro_wq {
-    //         compatible = "zmk,behavior-macro";
-    //         label = "MACRO_WRITE_QUIT";
-    //         #binding-cells = <0>;
-    //         bindings = <&kp COLON>, <&kp W>, <&kp Q>, <&kp ENTER>;
-    //     };
-    // };
+        macro_wq: macro_wq {
+            compatible = "zmk,behavior-macro";
+            label = "MACRO_WRITE_QUIT";
+            #binding-cells = <0>;
+            bindings = <&kp COLON>, <&kp W>, <&kp Q>, <&kp ENTER>;
+        };
+    };
 
     combos {
         compatible = "zmk,combos";
@@ -49,35 +49,35 @@
             timeout-ms = <50>;
             key-positions = <21 22>;
             bindings = <&kp ESC>;
-            // layers = <0>;
+            layers = <0>;
         };
 
         combo_tab {
             timeout-ms = <50>;
             key-positions = <3 13>;
             bindings = <&kp TAB>;
-            // layers = <0>;
+            layers = <0>;
         };
 
         combo_minus {
             timeout-ms = <50>;
             key-positions = <6 16>;
             bindings = <&kp MINUS>;
-            // layers = <0>;
+            layers = <0>;
         };
 
         combo_colon {
             timeout-ms = <50>;
             key-positions = <1 2>;
             bindings = <&kp COLON>;
-            // layers = <0>;
+            layers = <0>;
         };
 
         combo_semicolon {
             timeout-ms = <50>;
             key-positions = <1 3>;
             bindings = <&kp SEMICOLON>;
-            // layers = <0>;
+            layers = <0>;
         };
     };
 
@@ -104,10 +104,10 @@
 
         NAV_layer {
             bindings = <
-                &kp C_PREV &kp C_VOL_DN &kp C_VOL_UP &kp C_NEXT &kp C_MUTE    &none     &none            &none            &none          &none
-                &kp LEFT   &kp DOWN     &kp UP       &kp RIGHT  &kp C_PP      &kp LG(O) &kp LS(LG(DOWN)) &kp LC(LG(DOWN)) &kp LC(LG(UP)) &kp LS(LG(UP))
-                &kp HOME   &kp PG_DN    &kp PG_UP    &kp END    &kp C_STOP    &none     &kp LG(LEFT)     &kp LG(DOWN)     &kp LG(UP)     &kp LG(RIGHT)
-                                                     &none      &none         &trans    &kp DEL
+                &kp C_PREV &kp C_VOL_DN &kp C_VOL_UP &kp C_NEXT &kp C_MUTE    &none        &macro_write     &macro_wq        &macro_email   &none
+                &kp LEFT   &kp DOWN     &kp UP       &kp RIGHT  &kp C_PP      &kp LG(O)    &kp LS(LG(DOWN)) &kp LC(LG(DOWN)) &kp LC(LG(UP)) &kp LS(LG(UP))
+                &kp HOME   &kp PG_DN    &kp PG_UP    &kp END    &kp C_STOP    &kp LG(FSLH) &kp LG(LEFT)     &kp LG(DOWN)     &kp LG(UP)     &kp LG(RIGHT)
+                                                     &none      &none         &trans       &kp DEL
             >;
         };	
 
