@@ -80,10 +80,31 @@
             layers = <0>;
         };
 
+        combo_launch {
+            timeout-ms = <100>;
+            key-positions = <2 3>;
+            bindings = <&kp LG(FSLH)>;
+            layers = <0>;
+        };
+
         combo_quit {
             timeout-ms = <100>;
-            key-positions = <8 9>;
+            key-positions = <6 7>;
             bindings = <&kp LG(Q)>;
+            layers = <0>;
+        };
+
+        combo_question_mark {
+            timeout-ms = <100>;
+            key-positions = <28 29>;
+            bindings = <&kp LS(FSLH)>;
+            layers = <0>;
+        };
+
+        combo_forward_slash {
+            timeout-ms = <100>;
+            key-positions = <27 28>;
+            bindings = <&kp BSLH>;
             layers = <0>;
         };
     };
