@@ -34,7 +34,7 @@ jobs:
       - name: West Zephyr export
         run: west zephyr-export
       - name: West Build (Sweep v2 Left)
-        run: west build -s zmk/app -b nice_nano -- -DSHIELD=cradio_left -DZMK_CONFIG="${GITHUB_WORKSPACE}/config"
+        run: west build -s zmk/app -b nice_nano -- -DSHIELD=sweep_left -DZMK_CONFIG="${GITHUB_WORKSPACE}/config"
       - name: Sweep v2 DTS File
         if: ${{ always() }}
         run: cat -n build/zephyr/nice_nano.dts.pre.tmp
@@ -48,7 +48,7 @@ jobs:
           name: firmware
           path: sweep_v2_left_nice_nano.uf2
       - name: West Build (Sweep v2 Right)
-        run: west build --pristine -s zmk/app -b nice_nano -- -DSHIELD=cradio_right -DZMK_CONFIG="${GITHUB_WORKSPACE}/config"
+        run: west build --pristine -s zmk/app -b nice_nano -- -DSHIELD=sweep_right -DZMK_CONFIG="${GITHUB_WORKSPACE}/config"
 
       - name: Sweep v2 Right Kconfig file
         run: cat build/zephyr/.config | grep -v "^#" | grep -v "^$"
