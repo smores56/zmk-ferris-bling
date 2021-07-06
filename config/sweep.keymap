@@ -38,14 +38,14 @@
 
         combo_next_tab {
             timeout-ms = <100>;
-            key-positions = <3 13>;
+            key-positions = <2 4>;
             bindings = <&kp LC(TAB)>;
             layers = <0>;
         };
 
         combo_last_tab {
             timeout-ms = <100>;
-            key-positions = <3 13>;
+            key-positions = <1 4>;
             bindings = <&kp LC(LS(TAB))>;
             layers = <0>;
         };
