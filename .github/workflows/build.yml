@@ -35,7 +35,7 @@ jobs:
         run: west zephyr-export
 
       - name: West Build (Ferris 0.2)
-        run: west build -s zmk/app -b ferris_rev02 -- -DSHIELD=ferris -DZMK_CONFIG="${GITHUB_WORKSPACE}/config"
+        run: west build -s zmk/app -b ferris_rev02 -- -DZMK_CONFIG="${GITHUB_WORKSPACE}/config"
       - name: Sweep v2 DTS File
         if: ${{ always() }}
         run: cat -n build/zephyr/ferris_rev02.dts.pre.tmp
